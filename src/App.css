@@ -1,0 +1,16 @@
+#root {
+  margin: 0 auto;
+  /* padding: 2rem; */
+  /* text-align: center; */
+}
+
+
+.page { min-height: 0; }
+
+
+
+.app-shell {
+  min-height: 100dvh;             /* viewport height, desktop-safe */
+  display: grid;
+  grid-template-rows: auto 1fr;
+}

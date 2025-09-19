@@ -1,0 +1,12 @@
+
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background-color: #fffcff; /* pick your color */
+
+
+  --uw-purple: #39275B;
+  --uw-light-purple: #5e4194;
+  --uw-light-gold: #ffcc00;
+} 
