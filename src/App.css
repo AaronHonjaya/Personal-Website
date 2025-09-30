@@ -12,5 +12,5 @@
 .app-shell {
   min-height: 100dvh;             /* viewport height, desktop-safe */
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
 }

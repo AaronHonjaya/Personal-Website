@@ -4,8 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './navbar/navbar'
 import { Routes, Route } from "react-router-dom";
-import Home from './home/home';
+import Home from './home';
 import About from './about';
+import Projects from './projects/Projects'
 // import Contact from './contact';
 function App() {
   const [count, setCount] = useState(0)
@@ -21,13 +22,15 @@ function App() {
         ]}
       />
 
-       {/* Route definitions */}
+    
       <main className="page">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
-      </Routes>
+        <Home />
+        <Projects />
+        {/* <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+     
+        </Routes> */}
       </main>
     </div>
   )
