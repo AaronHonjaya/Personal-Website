@@ -4,9 +4,17 @@ html, body, #root {
   margin: 0;
   padding: 0;
   background-color: #fffcff; /* pick your color */
-
+  scroll-behavior: smooth;
 
   --uw-purple: #39275B;
   --uw-light-purple: #5e4194;
   --uw-light-gold: #ffcc00;
+
 } 
+
+section { scroll-margin-top: 100px; }
+
+@media (max-width: 768px) {
+  section { scroll-margin-top: 70px; }
+  
+}

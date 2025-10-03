@@ -9,38 +9,16 @@ export type ProjectLink = {
 };
 
 export type ProjectCardProps = {
-  /** Project title shown prominently */
   title: string;
-  /** One or two sentences about the project */
-  description: string;
-  /** URL to the preview image */
+  description: React.ReactNode; // 👈 changed here
   imageSrc: string;
-  /** Accessible alt text for the image */
   imageAlt?: string;
-  /** Links to code/demo/docs etc. */
   links: ProjectLink[];
-  /** Optional small tags/pills (e.g., React, Python) */
   tags?: string[];
-  /** Optional extra class to tweak layout where used */
   className?: string;
 };
 
-/**
- * Reusable, accessible project card component (no Tailwind — plain CSS).
- *
- * Example usage:
- * <ProjectCard
- *   title="AI Legislation Tracker"
- *   description="Streamlit app that tracks state AI bills and summarizes changes."
- *   imageSrc="/images/ai-tracker.png"
- *   imageAlt="Screenshot of AI tracker UI"
- *   tags={["Python", "Streamlit", "NLP"]}
- *   links=[
- *     { label: "GitHub", href: "https://github.com/you/repo", newTab: true },
- *     { label: "Live Demo", href: "https://demo.example.com", newTab: true }
- *   ]}
- * />
- */
+
 export default function ProjectCard({
   title,
   description,
@@ -51,13 +29,14 @@ export default function ProjectCard({
   className = "",
 }: ProjectCardProps) {
   return (
-    <section
+    <div
       className={["pcard", className].filter(Boolean).join(" ")}
       role="region"
       aria-label={title}
     >
-        {/* eslint-disable-next-line jsx-a11y/alt-text */}
-      <img className="pcard__img" src={imageSrc} alt={imageAlt} loading="lazy" />
+      <div className="pcard__media">
+        <img className="pcard__img" src={imageSrc} alt={imageAlt} loading="lazy" />
+      </div>
 
       <div className="pcard__body">
         <h3 className="pcard__title">{title}</h3>
@@ -90,6 +69,6 @@ export default function ProjectCard({
           </div>
         )}
       </div>
-    </section>
+    </div>
   );
 }

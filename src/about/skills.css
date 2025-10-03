@@ -1,0 +1,100 @@
+/* Match your page sections (centering + clamp spacing like Home/Projects) */
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 4vw, 48px);
+  min-height: auto;
+  padding-inline: clamp(24px, 5vw, 96px);
+  margin-bottom: clamp(48px, 10vh, 120px);
+}
+
+/* Reuse color scale like your .projects_title */
+.skills_title {
+  font-size: clamp(1.6rem, 4.8vw, 2.5rem);
+  color: var(--uw-purple);
+  margin: 0;
+}
+
+/* Auto-fit grid that fills each row nicely on any screen size */
+.skills_grid {
+  width: 100%;                /* <-- important: prevents shrink-to-fit in flex */
+  max-width: 900px;          /* adjust to match your Projects width */
+  margin-inline: auto;        /* center the grid block */
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  /* ✅ Auto-fill as many columns as fit; each card is at least 220px and can grow */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(12px, 2vw, 20px);
+}
+
+/* Card look that complements ProjectCard.css */
+.skill_card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.skill_card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+.skill_media {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+}
+
+.skill_media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.skill_name {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #374151;
+  letter-spacing: 0.2px;
+}
+
+/* Small screens: keep spacing tidy */
+@media (max-width: 720px) {
+  .skills_grid { gap: 12px;}
+  .skill_card { padding: 10px 12px; }
+}
+
+
+/* tablet */
+@media (max-width: 900px) {
+  .skills_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* phone */
+@media (max-width: 600px) {
+  .skills_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* 
+@media (max-width: 400px) {
+  .skills_grid {
+    grid-template-columns: 1fr;
+  }
+} */

@@ -1,0 +1,138 @@
+:root {
+  --uw-purple: #2b2467;              /* already used in Projects title */
+  --exp-border: 1px solid #e6e6e6;
+  --exp-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.experience {
+  scroll-margin-top: 72px;
+  padding-inline: clamp(16px, 5vw, 96px);
+  margin: 0 auto clamp(64px, 12vh, 140px);
+  max-width: 100%;                 /* align with Projects width */
+  text-align: center;
+  --section-bg: #fbf7fd; /* <-- use your page bg color here */
+
+}
+
+.experience_title {
+  font-size: clamp(1.6rem, 4.8vw, 2.5rem);
+  color: var(--uw-purple);
+  margin: 0 0 6px;
+}
+
+.experience_blurb {
+  color: #4b5563;
+  margin: 0 0 clamp(16px, 4vw, 35px);
+}
+
+.exp_grid {
+  display: grid;
+  gap: clamp(16px, 4vw, 48px); /* use same spacing strategy as Projects */
+  justify-content: center;
+  text-align: center;
+}
+
+
+.exp_lane_title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+.exp_lane_subtitle {
+  font-size: 0.95rem;
+  color: #6b7280; /* gray-500 */
+  margin: 2px 0 12px;
+}
+
+.exp_lane_range {
+  margin-left: 4px;
+  font-weight: normal;
+  color: #9ca3af; /* lighter gray */
+}
+
+.exp_timeline {
+  list-style: none;
+  margin: 0;
+  padding-left: 18px;                 /* room for line & dots */
+  position: relative;
+}
+
+.exp_timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: #e5e7eb;
+}
+
+.exp_item {
+  position: relative;
+  margin: 0 0 16px;
+}
+
+.exp_dot {
+  position: absolute;
+  left: -2px;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--uw-purple);
+  box-shadow: 0 0 0 3px #ede9fe;     /* subtle ring */
+}
+
+.exp_card {
+  border: var(--exp-border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--exp-shadow);
+  padding: 12px 14px;
+}
+
+.exp_meta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  align-items: baseline;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.exp_role { font-weight: 700; color: #111827; }
+.exp_org  { color: #4b5563; }
+.exp_date { grid-column: 2; color: #6b7280; font-size: 0.9rem; }
+
+.exp_bullets {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: #374151;
+}
+
+.exp_link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  color: #0f6fec;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Mobile: stack lanes and keep anchors visible below navbar */
+@media (max-width: 820px) {
+  .experience {max-width: 70%;}
+  .exp_grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .experience {
+    max-width: 100%;
+    padding-inline: 0;  
+  }
+}

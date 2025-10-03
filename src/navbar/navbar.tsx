@@ -5,6 +5,7 @@ import "./Navbar.css"; // import the CSS file
 type NavbarProps = {
   brand?: string;
   links: { name: string; path: string }[];
+  activeSection?: string;
 };
 
 type NavbarState = {
@@ -22,7 +23,7 @@ export default class Navbar extends React.Component<NavbarProps, NavbarState> {
   };
 
   render() {
-    const { brand = "Aaron Honjaya", links } = this.props;
+    const { brand = "Aaron Honjaya", links, activeSection } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -40,14 +41,41 @@ export default class Navbar extends React.Component<NavbarProps, NavbarState> {
         </button>
 
         {/* Links */}
-        <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
-          {links.map((link) => (
-            <li key={link.name}>
-              <Link to={link.path} className="navbar-link">
-                {link.name}
-              </Link>
-            </li>
-          ))}
+        <ul className={`navbar-links ${isOpen ? "open" : ""}`}>
+          {links.map((link) => {
+            const isHash = link.path.startsWith("#");
+
+            // For hash-links, use <a> and optional JS scroll for consistent behavior
+            if (isHash) {
+              return (
+                <li key={link.name}>
+                  <a
+                    href={link.path}
+                    className={`navbar-link ${link.name.toLowerCase() === activeSection ? "active" : ""}`}
+                    onClick={(e) => {
+                      e.preventDefault();                    // prevent jump
+                      const el = document.querySelector(link.path);
+                      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      // Optionally update the hash in the URL:
+                      history.replaceState(null, "", link.path);
+                      this.setState({ isOpen: false });
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              );
+            }
+
+            // For real routes, use <Link>
+            return (
+              <li key={link.name}>
+                <Link to={link.path} className="navbar-link" onClick={() => this.setState({ isOpen: false })}>
+                  {link.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     );

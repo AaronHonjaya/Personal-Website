@@ -1,0 +1,111 @@
+/* ContactCard.css */
+/* Root container (background card) */
+
+.ccard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 60vh;
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  overflow: hidden;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+  /* justify-content: center;
+  align-items: center; */
+}
+.ccard:focus-within,
+.ccard:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.10); }
+
+/* Header (optional)
+.ccard__head {
+  padding: 16px;
+  border-bottom: 1px solid #f1f1f1;
+}
+.ccard__title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+} */
+
+/* List of mini contact items */
+.ccard__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+
+/* Mini card as a full-width link */
+.ccard__item {
+  display: grid;
+  grid-template-columns: 100px 1fr; /* small icon left */
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  border: 1px solid #e6e6e6;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  transition: transform 140ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  outline: none;
+}
+.ccard__item:hover {
+  background: #f5faff;
+  border-color: #dbeafe;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.ccard__item:active { transform: translateY(0); }
+.ccard__item:focus-visible {
+  box-shadow: 0 0 0 3px #bfdbfe;
+  border-color: #93c5fd;
+  background: #f0f7ff;
+}
+
+/* Icon (keep small, like an app icon) */
+.ccard__iconWrap {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.ccard__icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Texts */
+.ccard__name {
+  margin: 0;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.2;
+  font-size: clamp(1.2rem, 1.5vw, 2rem);
+}
+.ccard__meta {
+  margin: 2px 0 0;
+  color: #4b5563;
+  font-size: clamp(0.8rem, 1rem, 1.2rem);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .ccard, .ccard__item { transition: none; }
+}
+
+/* Small screens */
+@media (max-width: 720px) {
+  .ccard__list { padding: 12px; gap: 8px; }
+  .ccard__item { padding: 10px;}
+  /* .ccard__iconWrap { width: 100px; height: 100px; }
+  .ccard__icon { width: 100px; height: 100px; } */
+}

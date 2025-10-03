@@ -79,6 +79,11 @@
   transition: color 0.3s ease;
 }
 
+.navbar-link.active {
+  color: var(--uw-dark-purple);
+  font-weight: bold;
+}
+
 .navbar-link::after {
   content: "";
   position: absolute;
@@ -112,7 +117,14 @@
     border-radius: 4px;
   }
 
-  .navbar-links.active {
+  .navbar-links.open {
     display: flex;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    height: 24px;  /* smaller logo on very small screens */
   }
 }
