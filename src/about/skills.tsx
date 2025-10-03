@@ -1,4 +1,3 @@
-import React from "react";
 import "./skills.css";
 
 type Skill = { name: string; img: string; alt?: string };

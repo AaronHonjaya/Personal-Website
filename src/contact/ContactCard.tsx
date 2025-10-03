@@ -1,5 +1,3 @@
-// ContactCard.tsx
-import React from "react";
 import "./contact-card.css";
 
 export type ContactItem = {
