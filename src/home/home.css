@@ -1,5 +1,5 @@
 .home {
-  display: flex;                 
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: clamp(16px, 4vw, 48px);
@@ -14,7 +14,6 @@
   border: 3px solid var(--uw-light-purple);
   box-shadow: 0 4px 8px var(--uw-light-purple);
 
-  /* remove manual offsets */
   position: static;
   top: auto;
 }
@@ -24,7 +23,6 @@
   font-size: 1.25rem;
   color: var(--uw-purple);
 
-  /* remove manual offsets */
   position: static;
   top: auto;
   margin-left: 0;
@@ -33,20 +31,20 @@
 
 @media (max-width: 768px) {
   .home {
-    flex-direction: column;     /* stack vertically */
-    align-items: center;        /* center each item */
-    text-align: center;         /* center text */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .profile-pic {
-    width: min(65vw, 320px);    /* scale nicely on phones */
+    width: min(65vw, 320px);
   }
 
   .description {
-    max-width: 40ch;            /* comfy reading width */
+    max-width: 40ch;
     position: static;
     top: auto;
-    margin-left: 0;          /* center in column */
+    margin-left: 0;
   }
 }
 

@@ -1,17 +1,17 @@
 import "./contact-card.css";
 
 export type ContactItem = {
-  label: string;          // e.g., "Email", "LinkedIn", "GitHub"
-  value: string;          // e.g., "you@domain.com" or "linkedin.com/in/you"
-  href: string;           // mailto: or https link
-  iconSrc: string;        // small icon path
+  label: string;
+  value: string;
+  href: string;
+  iconSrc: string;
   iconAlt?: string;
-  newTab?: boolean;       // open in new tab for web links
+  newTab?: boolean;
   ariaLabel?: string;
 };
 
 export type ContactCardProps = {
-  title?: string;         // Optional title like "Contact"
+  title?: string;
   items: ContactItem[];
   className?: string;
 };
@@ -27,12 +27,6 @@ export default function ContactCard({
       role="region"
       aria-label={title}
     >
-      {/* {title && (
-        <header className="ccard__head">
-          <h3 className="ccard__title">{title}</h3>
-        </header>
-      )} */}
-
       <div className="ccard__list">
         {items.map(({ label, value, href, iconSrc, iconAlt, newTab, ariaLabel }) => {
           const isExternal = newTab ?? /^https?:\/\//i.test(href);

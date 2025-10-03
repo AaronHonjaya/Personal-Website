@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"; // remove if you don't use react-router
-import "./navbar.css"; // import the CSS file
+import { Link } from "react-router-dom";
+import "./navbar.css";
 
 type NavbarProps = {
   brand?: string;
@@ -30,7 +30,6 @@ export default class Navbar extends React.Component<NavbarProps, NavbarState> {
       <nav className="navbar">
         <div className="navbar-brand">
           <img src="/imgs/cseLogo.png" alt="Logo" className="navbar-logo" />
-          {/* {brand} */}
           <span>{brand}</span>
 
         </div>
@@ -45,7 +44,7 @@ export default class Navbar extends React.Component<NavbarProps, NavbarState> {
           {links.map((link) => {
             const isHash = link.path.startsWith("#");
 
-            // For hash-links, use <a> and optional JS scroll for consistent behavior
+            // For hash-links, use <a>
             if (isHash) {
               return (
                 <li key={link.name}>
@@ -53,10 +52,9 @@ export default class Navbar extends React.Component<NavbarProps, NavbarState> {
                     href={link.path}
                     className={`navbar-link ${link.name.toLowerCase() === activeSection ? "active" : ""}`}
                     onClick={(e) => {
-                      e.preventDefault();                    // prevent jump
+                      e.preventDefault();
                       const el = document.querySelector(link.path);
                       el?.scrollIntoView({ behavior: "smooth", block: "start" });
-                      // Optionally update the hash in the URL:
                       history.replaceState(null, "", link.path);
                       this.setState({ isOpen: false });
                     }}

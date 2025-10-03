@@ -18,7 +18,7 @@ export default function Projects() {
 
           }
 
-          
+
           imageSrc="/imgs/ResearchCardImg.png"
           imageAlt="Retinal vessel segmentation results from our GrInAdapt paper"
           tags={["Computer Vision", "Deep Learning", "Domain Adaptation", "PyTorch", "Research"]}

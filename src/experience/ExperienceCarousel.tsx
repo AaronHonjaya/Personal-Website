@@ -12,8 +12,8 @@ type Props = {
 
 export default function ExperienceCarousel({ slides, accent = "var(--uw-purple, #2b2467)" }: Props) {
   const options: EmblaOptionsType = {
-    loop: true,            // ✅ no looping
-    align: "center",        // center the active card
+    loop: true,
+    align: "center",
     containScroll: "trimSnaps",
     dragFree: false,
   };
@@ -29,11 +29,11 @@ export default function ExperienceCarousel({ slides, accent = "var(--uw-purple, 
     const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
     emblaApi.on("select", onSelect);
     onSelect();
-    
+
   }, [emblaApi]);
 
- 
- 
+
+
 
   return (
     <div className="ec">
@@ -63,7 +63,7 @@ export default function ExperienceCarousel({ slides, accent = "var(--uw-purple, 
       <div className="ec__controls">
         <button className="ec__btn" onClick={() => emblaApi?.scrollPrev()} aria-label="Previous">‹</button>
         <button className="ec__btn" onClick={() => emblaApi?.scrollNext()} aria-label="Next">›</button>
-      </div>  
+      </div>
       <div className="ec__dots">
         {snaps.map((_, i) => (
           <button

@@ -1,20 +1,15 @@
 
-/* Navbar container */
-
-
 .navbar {
 
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  /* height: var(--navbar-height); */
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  /* background: linear-gradient(to right, #8F29F5, #D0A4F4); */
 
   background-color: rgb(255, 255, 255);
   color: var(--uw-light-purple);
@@ -23,25 +18,25 @@
   outline: none;
   padding: 0.75rem 1rem;
 
-  z-index: 1000;  /* stay on top */
+  z-index: 1000;
 }
 
-/* Brand name */
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 5%; /* spacing between logo and text */
+  gap: 5%;
   font-weight: bold;
   font-size: 1.25rem;
-  white-space: nowrap;   /* ✅ Prevent text wrapping */
+  white-space: nowrap;
 
 }
 
 .navbar-logo {
-  width: 100%;   /* adjust size */
+  width: 100%;
   height: 32px;
-  object-fit: contain; /* keep proportions */
+  object-fit: contain;
 }
+
 /* Hamburger toggle (hidden on desktop) */
 .navbar-toggle {
   display: none;
@@ -52,17 +47,12 @@
   cursor: pointer;
 }
 
-/* Links container */
-/* .navbar-links {
+
+.navbar-links {
   list-style: none;
   display: flex;
   gap: 1rem;
-} */
-.navbar-links {
-  list-style: none;   /* no bullets */
-  display: flex;      /* horizontal */
-  gap: 1rem;
-  margin: 0;          /* remove default ul spacing */
+  margin: 0;
   padding: 0;
 }
 
@@ -73,7 +63,7 @@
 /* underline slide-in effect */
 .navbar-link {
   position: relative;
-  display: inline-block;        /* needed for the ::after width animation */
+  display: inline-block;
   color: var(--uw-light-purple);
   text-decoration: none;
   transition: color 0.3s ease;
@@ -125,6 +115,6 @@
 
 @media (max-width: 480px) {
   .navbar-logo {
-    height: 24px;  /* smaller logo on very small screens */
+    height: 24px;
   }
 }

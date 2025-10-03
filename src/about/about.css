@@ -1,4 +1,3 @@
-/* Match your page sections (centering + clamp spacing like Home/Projects) */
 .about {
   display: flex;
   flex-direction: column;
@@ -10,7 +9,6 @@
   margin-bottom: clamp(48px, 10vh, 120px);
 }
 
-/* Reuse color scale like your .projects_title */
 .about_title {
   font-size: clamp(1.6rem, 4.8vw, 2.5rem);
   color: var(--uw-purple);
@@ -22,7 +20,6 @@
   font-size: 1.25rem;
   color: var(--uw-purple);
 
-  /* remove manual offsets */
   position: static;
   top: auto;
   margin-left: 0;
@@ -31,15 +28,15 @@
 
 @media (max-width: 768px) {
   .about {
-    flex-direction: column;     /* stack vertically */
-    align-items: center;        /* center each item */
-    text-align: center;         /* center text */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .about_description {
-    max-width: 40ch;            /* comfy reading width */
+    max-width: 40ch;
     position: static;
     top: auto;
-    margin-left: 0;          /* center in column */
+    margin-left: 0;
   }
 }

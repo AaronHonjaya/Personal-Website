@@ -1,63 +1,4 @@
 import "./experience.css";
-
-// type Item = {
-//   milestone: string;      // e.g., "Spring 2024"
-//   summary: string;        // short headline
-//   bullets?: string[];     // optional details
-//   link?: { label: string; href: string };
-// };
-
-// type LaneProps = {
-//   laneTitle: string;      // "Research" or "Teaching"
-//   org: string;            // "Vanderbilt University"
-//   orgUrl?: string;        // optional: link the org
-//   range: string;          // "2023–Present"
-//   items: Item[];          // milestones within this role
-// };
-
-// function Lane({ laneTitle, org, range, items }: LaneProps) {
-//   return (
-//     <div className="exp_lane">
-//       <h3 className="exp_lane_title">{laneTitle}</h3>
-//       <p className="exp_lane_subtitle">
-//         {org} <span className="exp_lane_range">({range})</span>
-//       </p>
-
-//       <ol className="exp_timeline" role="list">
-//         {items.map((it) => (
-//           <li className="exp_item" key={it.milestone + it.summary}>
-//             <div className="exp_dot" aria-hidden />
-//             <div className="exp_card">
-//               <div className="exp_meta">
-//                 <span className="exp_summary">{it.summary}</span>
-//                 <span className="exp_milestone">{it.milestone}</span>
-//               </div>
-//               {it.bullets && (
-//                 <ul className="exp_bullets">
-//                   {it.bullets.map((b, i) => (
-//                     <li key={i}>{b}</li>
-//                   ))}
-//                 </ul>
-//               )}
-//               {it.link && (
-//                 <a
-//                   className="exp_link"
-//                   href={it.link.href}
-//                   target="_blank"
-//                   rel="noreferrer"
-//                 >
-//                   {it.link.label}
-//                 </a>
-//               )}
-//             </div>
-//           </li>
-//         ))}
-//       </ol>
-//     </div>
-//   );
-// }
-
-// import "./experience.css";
 import TimelineCarousel from "./ExperienceCarousel";
 import type { Milestone as Slide} from "./ExperienceCarousel";
 
@@ -74,10 +15,8 @@ type LaneProps = {
   items: Item[];
 };
 
-function Lane({ laneTitle, org, range, items }: LaneProps) {
-  // map your items -> carousel milestones
+function Timeline({ laneTitle, org, range, items }: LaneProps) {
 
-// inside each Lane component
   const slides: Slide[] = items.map((it, i) => ({
     id: `${i}-${it.summary}`,
     date: it.milestone,
@@ -93,10 +32,9 @@ function Lane({ laneTitle, org, range, items }: LaneProps) {
         {org} <span className="exp_lane_range">({range})</span>
       </p>
 
-      {/* 🔄 REPLACED the <ol className="exp_timeline">… */}
-      <TimelineCarousel 
-        slides={slides} 
-        accent="var(--uw-purple)"   // or "#9ca3af" for Teaching, etc.
+      <TimelineCarousel
+        slides={slides}
+        accent="var(--uw-purple)"
       />
     </div>
   );
@@ -107,9 +45,9 @@ const researchItems: Item[] = [
   {
     milestone: "August 2024 - December 2024",
     summary: "Joined the Wang Lab",
-    bullets: ["Completed Stanford Computer Vision course (cs231n)", 
+    bullets: ["Completed Stanford Computer Vision course (cs231n)",
               "Began working on novel CNN for 3D to 2D Retinal Image Segmentation",
-              "Getting familiar with Vision Language Models, Generative Diffusion Models, and Contrastive Learning", 
+              "Getting familiar with Vision Language Models, Generative Diffusion Models, and Contrastive Learning",
               "Began working on OCTA to FA project - generating FA images using OCTA images"],
   },
   {
@@ -133,7 +71,8 @@ const researchItems: Item[] = [
   {
     milestone: "September 2025 - Present",
     summary: "Ongoing Research - Ophthalmic Foundation Model",
-    bullets: ["Developing core training pipelines for data", 
+    bullets: ["Developing a novel foundation model that aims to take various types of ophthalmologic imaging",
+              "Creating core training pipelines for data",
               "Designing new and novel model architectures for the model.",
               "Experimenting with different training strategies and datasets.",
     ]
@@ -144,7 +83,7 @@ const teachingItems: Item[] = [
   {
     milestone: "January 2025 - March 2025",
     summary: "First Quarter TA - CSE 332 ",
-    bullets: ["Co-Leading weekly classes called Sections", 
+    bullets: ["Co-Leading weekly classes called Sections",
               "Learning to teach and explain concepts clearly",
               "Held weekly office hours",
               "Grading assignments and exams"],
@@ -152,8 +91,8 @@ const teachingItems: Item[] = [
   {
     milestone: "April 2025 - June 2025",
     summary: "Second Quarter TA - CSE 332",
-    bullets: ["Retained all responsibilities from first quarter", 
-              "Started to get involved with managing course infrastructure", 
+    bullets: ["Retained all responsibilities from first quarter",
+              "Started to get involved with managing course infrastructure",
               "Assisted in developing new course assignments and exams"
     ],
   },
@@ -183,13 +122,13 @@ export default function Experience() {
       <p className="experience_blurb">Milestones within each role.</p>
 
       <div className="exp_grid">
-        <Lane
+        <Timeline
           laneTitle="Computer Vision AI Research"
           org="University of Washington, Seattle"
           range="August 2025 - Present"
           items={researchItems}
         />
-        <Lane
+        <Timeline
           laneTitle="Teaching Assistant - CSE 332: Data Structures & Parallelism"
           org="University of Washington, Seattle"
           range="January 2025 - Present"

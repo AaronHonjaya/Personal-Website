@@ -1,5 +1,3 @@
-/* ContactCard.css */
-/* Root container (background card) */
 
 .ccard {
   display: flex;
@@ -12,23 +10,11 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
   overflow: hidden;
   transition: box-shadow 180ms ease, transform 180ms ease;
-  /* justify-content: center;
-  align-items: center; */
+
 }
 .ccard:focus-within,
 .ccard:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.10); }
 
-/* Header (optional)
-.ccard__head {
-  padding: 16px;
-  border-bottom: 1px solid #f1f1f1;
-}
-.ccard__title {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #111827;
-} */
 
 /* List of mini contact items */
 .ccard__list {
@@ -41,7 +27,7 @@
 /* Mini card as a full-width link */
 .ccard__item {
   display: grid;
-  grid-template-columns: 100px 1fr; /* small icon left */
+  grid-template-columns: 100px 1fr;
   align-items: center;
   gap: 12px;
   text-decoration: none;
@@ -65,7 +51,6 @@
   background: #f0f7ff;
 }
 
-/* Icon (keep small, like an app icon) */
 .ccard__iconWrap {
   width: 100px;
   height: 100px;
@@ -81,7 +66,6 @@
   object-fit: contain;
 }
 
-/* Texts */
 .ccard__name {
   margin: 0;
   font-weight: 600;
@@ -97,7 +81,6 @@
   word-break: break-word;
 }
 
-/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .ccard, .ccard__item { transition: none; }
 }
@@ -106,6 +89,4 @@
 @media (max-width: 720px) {
   .ccard__list { padding: 12px; gap: 8px; }
   .ccard__item { padding: 10px;}
-  /* .ccard__iconWrap { width: 100px; height: 100px; }
-  .ccard__icon { width: 100px; height: 100px; } */
 }

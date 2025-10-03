@@ -1,7 +1,5 @@
 #root {
   margin: 0 auto;
-  /* padding: 2rem; */
-  /* text-align: center; */
 }
 
 
@@ -16,7 +14,7 @@
 }
 
 .app-shell {
-  min-height: 100dvh;             /* viewport height, desktop-safe */
+  min-height: 100dvh;           
   display: grid;
   grid-template-rows: auto auto;
 }

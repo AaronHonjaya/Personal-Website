@@ -10,15 +10,13 @@ import Contact from './contact/Contact'
 
 
 
-// import Contact from './contact';
 function App() {
-  // const [activeSection, setActiveSection] = useState("home");
-  
+
   const activeSection = useScrollSpy(['home','about','experience','projects','contact']);
 
   return (
     <div className='app-shell'>
-      
+
       <Navbar
         brand="Aaron Honjaya"
         links={[
@@ -31,9 +29,7 @@ function App() {
         activeSection={activeSection}
       />
 
-    
       <main className="page">
-        
         <section id="home">
           <Home />
         </section>
@@ -50,7 +46,7 @@ function App() {
         <section id="projects">
           <Projects />
         </section>
-        
+
         <section id="contact">
           <Contact />
         </section>

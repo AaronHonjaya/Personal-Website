@@ -14,7 +14,6 @@ export function useScrollSpy(ids: string[]) {
         const navH = nav?.offsetHeight ?? 0;
         const probeY = Math.max(window.innerHeight * 0.3, navH + 1);
 
-        // 1) try “contains the probe line”
         let current: string | null = null;
         for (const id of ids) {
           const el = document.getElementById(id);
@@ -49,7 +48,7 @@ export function useScrollSpy(ids: string[]) {
 
     window.addEventListener('scroll', handler, { passive: true });
     window.addEventListener('resize', handler);
-    handler(); // initial
+    handler();
     return () => {
       window.removeEventListener('scroll', handler);
       window.removeEventListener('resize', handler);

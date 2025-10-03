@@ -10,7 +10,7 @@ export type ProjectLink = {
 
 export type ProjectCardProps = {
   title: string;
-  description: React.ReactNode; // 👈 changed here
+  description: React.ReactNode;
   imageSrc: string;
   imageAlt?: string;
   links: ProjectLink[];

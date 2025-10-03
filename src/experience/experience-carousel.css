@@ -6,7 +6,7 @@
   --shadow-lg:0 12px 24px rgba(0,0,0,.10);
 }
 
-.ec { width: 100%; max-width: 900px; margin: 0 auto; } 
+.ec { width: 100%; max-width: 900px; margin: 0 auto; }
 .ec__viewport { overflow: hidden; padding: 0 12px; }
 .ec__container {
   display: flex;
@@ -14,7 +14,7 @@
 }
 
 .ec__slide {
-  flex: 0 0 72%;                 /* bigger card, centered by Embla align:center */
+  flex: 0 0 72%;
   padding: 0 12px;
   box-sizing: border-box;
   display: flex;
@@ -28,7 +28,7 @@
   border-radius: 20px;
   border-top: 5px solid var(--uw-purple);
   box-shadow: var(--shadow-lg);
-  padding: clamp(16px, 3.5vw, 28px);  /* scale padding on small screens */
+  padding: clamp(16px, 3.5vw, 28px);
   font-size: clamp(1rem, 2.4vw, 1.1rem);
   line-height: 1.5;
   text-align: left;
@@ -36,7 +36,7 @@
 
 .ec__title{
   margin: 0 0 8px;
-  font-size: 1.25rem;            /* larger title */
+  font-size: 1.25rem;
   font-weight: 800;
   color: #111827;
 }
@@ -95,7 +95,7 @@
   .ec__slide{ flex-basis: 80%; }
 }
 
-/* === MOBILE: make each slide exactly the device width === */
+/* mobile */
 @media (max-width: 700px) {
   /* Let the carousel break out to true viewport width */
   .ec { max-width: none; }
@@ -111,12 +111,11 @@
 
   /* Each slide should match the viewport width exactly */
   .ec__slide {
-    flex: 0 0 90vw !important;  /* key fix */
-    padding: 0 12px;             /* small gutters inside the card */
+    flex: 0 0 90vw !important;
+    padding: 0 12px;
     min-width: 0;
   }
 
-  /* Fixed shared height so all carousels match on phones */
   .ec__card {
     height: 280px;
     padding: 16px;
