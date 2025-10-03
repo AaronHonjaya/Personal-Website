@@ -55,7 +55,7 @@ export default function Projects() {
           imageAlt="Screenshot of Bank Statements Scanner"
           tags={["Python", "AWS", "Data Extraction", "Machine Learning", "JavaScript"]}
           links={[
-            { label: "GitHub", href: "https://github.com/you/repo", newTab: true },
+            { label: "GitHub", href: "https://github.com/AaronHonjaya/Bank-Statements-Scanner", newTab: true },
           ]}
       />
 
