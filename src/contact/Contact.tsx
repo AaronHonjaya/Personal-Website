@@ -12,7 +12,7 @@ export default function Contact(){
                     {
                     label: "Email",
                     value: "ahonjaya@cs.washington.edu",
-                    href: "ahonjaya@cs.washington.edu",
+                    href: "mailto:ahonjaya@cs.washington.edu",
                     iconSrc: "/imgs/mail.svg",
                     iconAlt: "Email"
                     },
