@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // remove if you don't use react-router
-import "./Navbar.css"; // import the CSS file
+import "./navbar.css"; // import the CSS file
 
 type NavbarProps = {
   brand?: string;
