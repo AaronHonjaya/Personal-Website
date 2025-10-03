@@ -186,13 +186,13 @@ export default function Experience() {
         <Lane
           laneTitle="Computer Vision AI Research"
           org="University of Washington, Seattle"
-          range="2023 - Present"
+          range="August 2025 - Present"
           items={researchItems}
         />
         <Lane
           laneTitle="Teaching Assistant - CSE 332: Data Structures & Parallelism"
           org="University of Washington, Seattle"
-          range="2022 - 2025"
+          range="January 2025 - Present"
           items={teachingItems}
         />
       </div>

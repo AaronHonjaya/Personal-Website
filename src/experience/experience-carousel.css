@@ -126,5 +126,5 @@
 
 @media (max-width: 420px) {
   .ec__slide { flex-basis: 100vw !important; }
-  .ec__card  { height: 260px; padding: 14px; font-size: 0.92rem; }
+  .ec__card  { height: 280px; padding: 14px; font-size: 0.92rem; }
 }

@@ -6,7 +6,7 @@ const skills: Skill[] = [
   { name: "Python", img: "/imgs/skills/python.png" },
   { name: "JavaScript", img: "/imgs/skills/js.png" },
   { name: "TypeScript", img: "/imgs/skills/ts.png" },
-  { name: "C++", img: "/imgs/skills/cpp.png" },
+  { name: "C/C++", img: "/imgs/skills/cpp.png" },
   { name: "Java", img: "/imgs/skills/java.png" },
   { name: "React", img: "/imgs/skills/react.png" },
   { name: "Node.js", img: "/imgs/skills/nodejs.png" },
